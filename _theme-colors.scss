@@ -130,7 +130,22 @@ $_rest: (
 );
 
 $primary-palette: map.merge(map.get($_palettes, primary), $_rest);
-$tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
+$primary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
+
+$warn-palette: map.get($_palettes, error);
+$background-palette: (
+  background: map.get(map.get($_palettes, neutral), $_rest),
+  on-background: map.get(map.get($_palettes, neutral), $_rest),
+);
+$surface-palette: (
+  surface: map.get(map.get($_palettes, neutral), $_rest),
+  on-surface: map.get(map.get($_palettes, neutral), $_rest),
+);
+
+$main-palette: (
+  primary: $primary-palette,
+  tertiary: $primary-palette,
+);
 
 @function _high-contrast-value($light, $dark, $theme-type) {
   @if ($theme-type == light) {
