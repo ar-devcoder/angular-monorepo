@@ -1,0 +1,45 @@
+@use './libs/shared/ui/src/lib/styles/themes/theme.scss' as theme;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+.theme-wrapper {
+  height: 100%;
+  width: 100%;
+
+  &.orange-light {
+    @extend .orange-light-theme;
+  }
+
+  &.orange-dark {
+    @extend .orange-dark-theme;
+  }
+
+  &.blue-light {
+    @extend .blue-light-theme;
+  }
+
+  &.blue-dark {
+    @extend .blue-dark-theme;
+  }
+}
+
+.dark-theme {
+  color-scheme: dark;
+
+  background-color: #121212;
+  color: white;
+}
