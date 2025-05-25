@@ -6,6 +6,7 @@ module.exports = {
     './packages/**/*.{js,ts,jsx,tsx}',
     './{src,pages,components,apps}/**/*.{ts,tsx,html}',
   ],
+  darkMode: ['class', "[class~='dark']", "[class~='dark-theme']"],
   theme: {
   },
 };

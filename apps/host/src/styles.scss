@@ -2,11 +2,27 @@
 @use '../../../_theme-colors.scss' as themeColors;
 @import url('../../../global.scss');
 
-html {
-  color-scheme: light dark;
+html.light {
+  color-scheme: light;
   @include mat.theme((
-    color: themeColors.$main-palette,
+    color: themeColors.$main-palette, // Assuming $main-palette is your light theme palette
     typography: Roboto,
     density: -2
   ));
+}
+
+html.dark {
+  color-scheme: dark;
+  @include mat.theme((
+    color: themeColors.$main-palette, // Assuming $main-palette is your light theme palette
+    typography: Roboto,
+    density: -2
+  ));
+}
+
+:host {
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+  border: 1px solid var(--mat-sys-outline-variant);
+  font: var(--mat-sys-body-large);
 }

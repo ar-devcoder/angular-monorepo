@@ -5,6 +5,7 @@ const baseConfig = require('../../tailwind.base.config');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', "[class~='dark']", "[class~='dark-theme']"],
   content: [
     ...(baseConfig?.content || []),
     join(
