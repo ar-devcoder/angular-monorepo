@@ -1,5 +1,5 @@
 @use './libs/shared/ui/src/lib/styles/themes/theme.scss' as theme;
-
+@use '@angular/material' as mat;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,30 +16,11 @@ html, body {
   height: 100%;
 }
 
-.theme-wrapper {
-  height: 100%;
-  width: 100%;
-
-  &.orange-light {
-    @extend .orange-light-theme;
-  }
-
-  &.orange-dark {
-    @extend .orange-dark-theme;
-  }
-
-  &.blue-light {
-    @extend .blue-light-theme;
-  }
-
-  &.blue-dark {
-    @extend .blue-dark-theme;
-  }
-}
-
-.dark-theme {
-  color-scheme: dark;
-
-  background-color: #121212;
-  color: white;
+html {
+  color-scheme: light dark;
+  @include mat.theme((
+    color: mat.$violet-palette,
+    typography: Roboto,
+    density: 0
+  ));
 }
