@@ -147,6 +147,14 @@ $main-palette: (
   tertiary: $primary-palette,
 );
 
+
+
+$blue-theme-palette:mat.$blue-palette;
+
+
+
+$green-theme-palette: mat.$green-palette;
+
 @function _high-contrast-value($light, $dark, $theme-type) {
   @if ($theme-type == light) {
     @return $light;

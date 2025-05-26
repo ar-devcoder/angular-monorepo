@@ -2,19 +2,61 @@
 @use '../../../_theme-colors.scss' as themeColors;
 @import url('../../../global.scss');
 
-html.light {
+// Default Light Theme (current main-palette)
+html.light.theme-default {
   color-scheme: light;
   @include mat.theme((
-    color: themeColors.$main-palette, // Assuming $main-palette is your light theme palette
+    color: mat.$orange-palette,
     typography: Roboto,
     density: -2
   ));
 }
 
-html.dark {
+// Default Dark Theme
+html.dark.theme-default {
   color-scheme: dark;
   @include mat.theme((
-    color: themeColors.$main-palette, // Assuming $main-palette is your light theme palette
+    color:mat.$orange-palette,
+    typography: Roboto,
+    density: -2
+  ));
+}
+
+// Blue Light Theme
+html.light.theme-blue {
+  color-scheme: light;
+  @include mat.theme((
+    color: themeColors.$blue-theme-palette,
+    typography: Roboto,
+    density: -2
+  ));
+}
+
+// Blue Dark Theme
+html.dark.theme-blue {
+  color-scheme: dark;
+  @include mat.theme((
+    color: themeColors.$blue-theme-palette,
+    typography: Roboto,
+    density: -2
+  ));
+}
+
+// Green Light Theme
+html.light.theme-green {
+  color-scheme: light;
+  @include mat.theme((
+    color: themeColors.$green-theme-palette,
+    typography: Roboto,
+    density: -2
+  ));
+}
+
+// Green Dark Theme
+html.dark.theme-green {
+  color-scheme: dark;
+  @include mat.theme((
+    color:mat.$green-palette,
     typography: Roboto,
     density: -2
   ));

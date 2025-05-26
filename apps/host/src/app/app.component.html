@@ -4,9 +4,23 @@
   <li><a routerLink="auth/login">Auth</a></li>
 </ul>
 
-<div>
-  <button (click)="toggleTheme()">
-    Toggle Theme ({{ isDarkMode ? 'Light' : 'Dark' }})
+<div style="padding: 10px;">
+  <label for="theme-select">Choose a theme:</label>
+
+
+  <mat-form-field appearance="outline">
+    <mat-label>State</mat-label>
+    <mat-select (selectionChange)="selectTheme($event.value)">
+      <mat-option>None</mat-option>
+      @for (theme of availableThemes; track theme.name) {
+        <mat-option [value]="theme">{{theme.name}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+
+  <button (click)="toggleDarkMode()" style="margin-left: 10px;">
+    Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode
   </button>
 </div>
 
